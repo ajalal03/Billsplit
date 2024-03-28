@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <!-- NAVBAR STYLE -->
+    <link rel="stylesheet" href="nav_foot.css">  
+    <link rel="stylesheet" href="Homepage.css">
+
+    <title>Billsplit</title>
+    <style>
+        /* Style for each page */
+    </style>
+    
+</head>
+    
+<body>
+    <div id="pageContainer">
+        <!-- HEADER STUFF, CAN IGNORE -->
+        <nav>
+            <ul>
+            <a class="logos" href="index.html">
+                <span>
+                <li class="companyName">Billsplit</li>
+                <li class="logo"></li>
+                </span>
+            </a>
+            <li class="navItem attention"><a href="fullCalculator.html">Split a Receipt</a></li>
+            <li class="navItem signIn" name="guestItem"><a href="fullCalculator.html">Sign In</a></li>
+            
+            <li class="hamburger" onclick="toggleNav()" onmouseover="openNav()" onmouseout="closeNav()">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-close" style="display:none"></i>
+            </li>
+            </ul>
+        </nav>
+        <div id="dropdown">
+            <ul id="dropMenu" onclick="toggleNav()" onmouseover="openNav()" onmouseout="closeNav()">
+                <li class="navItem attention"><a href="fullCalculator.html">Split a Receipt</a></li>
+                <li class="navItem signIn" name="guestItem"><a href="signIn.html">Sign In</a></li>
+                <li class="navItem user" name="userItem" ><a href="history.html">My History</a></li>
+                <li class="navItem"><a href="howto.html">How to use</a></li>
+                <li class="navItem"><a href="aboutUs.html">About</a></li>
+                <li class="navItem"><a href="contactUs.html">Contact Us</a></li>
+                <li class="navItem user" name="userItem" ><a href="logOut.html">Log Out</a></li>
+            </ul>
+        </div>
+
+        <!-- ALL PAGE CONTENT HERE -->
+        <div class="container" style ="margin-top: 2.5rem;">
+            <div class="structure">
+                <div class="introText">
+                <h2 class="title">The <span id="emphasize"> Fastest </span> Way to Split a Reciept.</h2>
+                <br/>
+                <h3>Sharing made easy with Billsplit.</h3>
+                <p>Efficient, sophisticated, and fair sharing.<br>
+                The optimized receipt splitting experience <br> with Billsplit.</p>
+                <span class="introLinks">
+                <a class="button" href="fullCalculator.html">Get Started</a>
+                <a class="normalLink" href="aboutUs.html">Learn More</a>
+                </span>
+                </div>
+                <div class="backgroundPicture">
+                    <img class="fridge" src="fridge.png" alt="">
+                    <div class="shadow"></div>
+                </div>
+            </div>
+            <div id="proAd">
+                <div class="proHead">
+                    <div>Billsplit</div>
+                    <div style="color:#2f64eb">Pro</div>
+                    <div class="proNew">New</div>
+                </div>
+                <div class="proElse">
+                <div class="proMsg">Groundbreaking Features Coming Soon</div>
+                <a class="button pro" href="pro2.html">Find out more</a>
+                </div>
+            </div>
+        </div>
+    
+
+        <!-- FOOTER CAN IGNORE -->
+        <div class="footer">
+            <ul class="footerItems">
+                <li class="footerItem rightFoot"><a href="contactus.html">Contact Us</a></li>
+                <li class="footerItem"><a href="aboutUs.html">About</a></li>
+                <li class="footerItem"><a href="howto.html">How to use</a></li>
+                <li class="footerNotes">Billsplit 2021. Some Rights Reserved.</li>
+            </ul>
+        </div>
+    
+    </div>
+    
+</body> 
+     <!-- Function files -->
+    <script src="guestUserLogic.js"></script>
+    <script src="nav_footLogic.js"></script>
+    <script>
+        var username = getUsername(true);
+        var guestUser = isUserGuest(username);
+        updateNavItems(guestUser);
+        var holdOpen = false; //drop menu variables
+        var holdLength = 750;
+        var hideTimer;
+
+        // add any function calls or global variables here
+    </script>
+    
+</html>
